@@ -210,7 +210,7 @@ fn build_sse2_sse41_avx2_assembly() {
     println!("cargo:rustc-cfg=blake3_sse2_ffi");
     println!("cargo:rustc-cfg=blake3_sse41_ffi");
     println!("cargo:rustc-cfg=blake3_avx2_ffi");
-    eprintln!("DEBUG!!! PWD: {}", std::env::current_dir().unwrap());
+    eprintln!("DEBUG!!! PWD: {}", std::env::current_dir().unwrap().display());
     let mut build = new_build();
     if is_windows_target() {
         if use_msvc_asm() {
