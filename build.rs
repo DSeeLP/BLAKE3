@@ -379,6 +379,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     // When compiling with clang-cl for windows, it adds .asm files to the root
     // which we need to delete so cargo doesn't get angry
     if is_windows_target() && !use_msvc_asm() {
+        panic!("trying to remove file");
         let _ = std::fs::remove_file("blake3_avx2_x86-64_windows_gnu.asm");
         let _ = std::fs::remove_file("blake3_avx512_x86-64_windows_gnu.asm");
         let _ = std::fs::remove_file("blake3_sse2_x86-64_windows_gnu.asm");
